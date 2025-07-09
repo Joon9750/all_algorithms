@@ -66,3 +66,17 @@ for i in 0..<toRemove.count {
 print(Array(results).sorted().joined(separator: "\n"))
 ```
 문자열 최대 길이가 200이므로 문자열 순회 가능
+### 디버깅
+하나의 식을 여러 괄호 쌍이 감싸는 경우를 고려하지 못했었다.
+```
+input:
+((1 + 2))
+expected:
+(1 + 2)
+1 + 2
+output:
+(1 + 2)
+(1 + 2)
+1 + 2
+```
+`var results`를 `[String]` -> `Set<String>`으로 바꿔서 해결
